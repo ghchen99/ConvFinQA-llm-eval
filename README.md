@@ -192,8 +192,6 @@ The system tracks multiple quality dimensions:
 
 | Metric | Results | Accuracy |
 |--------|---------|----------|
-| **Total Multi-Turn Conversations** | 100 | - |
-| **Total Individual Questions** | 355 | - |
 | **Answer Accuracy** | 300/355 | **84.5%** |
 | **Program Accuracy** | 289/355 | **81.4%** |
 | **Both Correct** | 280/355 | **78.9%** |
