@@ -79,8 +79,8 @@
         "question": "what is the net cash from operating activities in 2009?",
         "expected_program": "206588",
         "expected_answer": 206588.0,
-        "predicted_program": "206588",
-        "predicted_answer": 206588.0
+        "predicted_program": "174247",
+        "predicted_answer": 174247.0
       },
       {
         "question": "what about in 2008?",
@@ -101,7 +101,7 @@
         "expected_program": "subtract(206588, 181001), divide(#0, 181001)",
         "expected_answer": 0.14136,
         "predicted_program": "divide(25587, 181001), multiply(#0, 100)",
-        "predicted_answer": 14.1376
+        "predicted_answer": 14.1364
       }
     ],
     "id": "Single_JKHY/2009/page_28.pdf-3"
@@ -277,8 +277,8 @@
         "question": "and how much does this change represent in relation to that total in 2000, in percentage?",
         "expected_program": "subtract(5363, 7983), divide(#0, 7983)",
         "expected_answer": -0.3282,
-        "predicted_program": "subtract(5363, 7983), divide(#0, 7983), multiply(#1, 100)",
-        "predicted_answer": -32.8221
+        "predicted_program": "divide(-2620, 7983), multiply(#0, 100)",
+        "predicted_answer": -32.8185
       }
     ],
     "id": "Single_AAPL/2002/page_23.pdf-1"

@@ -2,7 +2,7 @@ import json
 import pandas as pd
 import os
 
-def load_and_save_samples(input_file='./train.json', output_file='./processed_train.json'):
+def load_and_save_samples(input_file='./data/input/train.json', output_file='./data/input/processed_train.json'):
     """
     Load samples from train.json, process them into a structured format,
     and save the processed data to a new JSON file.
