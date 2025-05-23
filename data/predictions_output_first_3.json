@@ -100,8 +100,8 @@
         "question": "what percentage change does this represent?",
         "expected_program": "subtract(206588, 181001), divide(#0, 181001)",
         "expected_answer": 0.14136,
-        "predicted_program": "divide(25587, 181001)",
-        "predicted_answer": 0.1414
+        "predicted_program": "divide(25587, 181001), multiply(#0, 100)",
+        "predicted_answer": 14.1376
       }
     ],
     "id": "Single_JKHY/2009/page_28.pdf-3"
@@ -183,8 +183,8 @@
         "question": "what is the percent change?",
         "expected_program": "subtract(9362.2, 9244.9), divide(#0, 9244.9)",
         "expected_answer": 0.01269,
-        "predicted_program": "subtract(9362.2, 9244.9), divide(#0, 9244.9), multiply(#1, 100)",
-        "predicted_answer": 1.2698
+        "predicted_program": "subtract(9362.2, 9244.9), divide(#0, 9244.9)",
+        "predicted_answer": 0.0127
       }
     ],
     "id": "Single_RSG/2008/page_114.pdf-2"
@@ -282,206 +282,5 @@
       }
     ],
     "id": "Single_AAPL/2002/page_23.pdf-1"
-  },
-  {
-    "financial_report": {
-      "pre_text": [
-        "( 1 ) includes shares repurchased through our publicly announced share repurchase program and shares tendered to pay the exercise price and tax withholding on employee stock options .",
-        "shareowner return performance graph the following performance graph and related information shall not be deemed 201csoliciting material 201d or to be 201cfiled 201d with the securities and exchange commission , nor shall such information be incorporated by reference into any future filing under the securities act of 1933 or securities exchange act of 1934 , each as amended , except to the extent that the company specifically incorporates such information by reference into such filing .",
-        "the following graph shows a five-year comparison of cumulative total shareowners 2019 returns for our class b common stock , the s&p 500 index , and the dow jones transportation average .",
-        "the comparison of the total cumulative return on investment , which is the change in the quarterly stock price plus reinvested dividends for each of the quarterly periods , assumes that $ 100 was invested on december 31 , 2004 in the s&p 500 index , the dow jones transportation average , and our class b common stock .",
-        "comparison of five year cumulative total return $ 40.00 $ 60.00 $ 80.00 $ 100.00 $ 120.00 $ 140.00 $ 160.00 2004 20092008200720062005 s&p 500 ups dj transport ."
-      ],
-      "post_text": [
-        "."
-      ],
-      "table": [
-        [
-          "",
-          "12/31/04",
-          "12/31/05",
-          "12/31/06",
-          "12/31/07",
-          "12/31/08",
-          "12/31/09"
-        ],
-        [
-          "united parcel service inc .",
-          "$ 100.00",
-          "$ 89.49",
-          "$ 91.06",
-          "$ 87.88",
-          "$ 70.48",
-          "$ 75.95"
-        ],
-        [
-          "s&p 500 index",
-          "$ 100.00",
-          "$ 104.91",
-          "$ 121.48",
-          "$ 128.15",
-          "$ 80.74",
-          "$ 102.11"
-        ],
-        [
-          "dow jones transportation average",
-          "$ 100.00",
-          "$ 111.65",
-          "$ 122.61",
-          "$ 124.35",
-          "$ 97.72",
-          "$ 115.88"
-        ]
-      ]
-    },
-    "conversation": [
-      {
-        "question": "what was the change in the performance of the united parcel service inc . from 2004 to 2009?",
-        "expected_program": "subtract(75.95, const_100)",
-        "expected_answer": -24.05,
-        "predicted_program": "subtract(75.95, 100.00)",
-        "predicted_answer": -24.05
-      },
-      {
-        "question": "and how much does this change represent in relation to that performance in 2004, in percentage?",
-        "expected_program": "subtract(75.95, const_100), divide(#0, const_100)",
-        "expected_answer": -0.2405,
-        "predicted_program": "subtract(75.95, 100), divide(#0, 100)",
-        "predicted_answer": -0.2405
-      },
-      {
-        "question": "what was the performance value of the s&p 500 index in 2009?",
-        "expected_program": "102.11",
-        "expected_answer": 102.11,
-        "predicted_program": "102.11",
-        "predicted_answer": 102.11
-      },
-      {
-        "question": "what was, then, the change in that performance from 2004 to 2009?",
-        "expected_program": "subtract(75.95, const_100), divide(#0, const_100), subtract(102.11, const_100)",
-        "expected_answer": 2.11,
-        "predicted_program": "subtract(102.11, const_100)",
-        "predicted_answer": 2.11
-      },
-      {
-        "question": "and how much does this change represent in relation to that performance in 2004, in percentage?",
-        "expected_program": "subtract(75.95, const_100), divide(#0, const_100), subtract(102.11, const_100), divide(#2, const_100)",
-        "expected_answer": 0.0211,
-        "predicted_program": "subtract(102.11, const_100), divide(#0, const_100)",
-        "predicted_answer": 0.0211
-      },
-      {
-        "question": "what is, then, the difference between the percent representation of the united parcel service inc . and the s&p 500 index?",
-        "expected_program": "subtract(75.95, const_100), divide(#0, const_100), subtract(102.11, const_100), divide(#2, const_100), subtract(#1, #3)",
-        "expected_answer": -0.2616,
-        "predicted_program": "subtract(-0.2405, 0.0211)",
-        "predicted_answer": -0.2616
-      }
-    ],
-    "id": "Single_UPS/2009/page_33.pdf-2"
-  },
-  {
-    "financial_report": {
-      "pre_text": [
-        "( 1 ) includes shares repurchased through our publicly announced share repurchase program and shares tendered to pay the exercise price and tax withholding on employee stock options .",
-        "shareowner return performance graph the following performance graph and related information shall not be deemed 201csoliciting material 201d or to be 201cfiled 201d with the securities and exchange commission , nor shall such information be incorporated by reference into any future filing under the securities act of 1933 or securities exchange act of 1934 , each as amended , except to the extent that the company specifically incorporates such information by reference into such filing .",
-        "the following graph shows a five-year comparison of cumulative total shareowners 2019 returns for our class b common stock , the s&p 500 index , and the dow jones transportation average .",
-        "the comparison of the total cumulative return on investment , which is the change in the quarterly stock price plus reinvested dividends for each of the quarterly periods , assumes that $ 100 was invested on december 31 , 2004 in the s&p 500 index , the dow jones transportation average , and our class b common stock .",
-        "comparison of five year cumulative total return $ 40.00 $ 60.00 $ 80.00 $ 100.00 $ 120.00 $ 140.00 $ 160.00 2004 20092008200720062005 s&p 500 ups dj transport ."
-      ],
-      "post_text": [
-        "."
-      ],
-      "table": [
-        [
-          "",
-          "12/31/04",
-          "12/31/05",
-          "12/31/06",
-          "12/31/07",
-          "12/31/08",
-          "12/31/09"
-        ],
-        [
-          "united parcel service inc .",
-          "$ 100.00",
-          "$ 89.49",
-          "$ 91.06",
-          "$ 87.88",
-          "$ 70.48",
-          "$ 75.95"
-        ],
-        [
-          "s&p 500 index",
-          "$ 100.00",
-          "$ 104.91",
-          "$ 121.48",
-          "$ 128.15",
-          "$ 80.74",
-          "$ 102.11"
-        ],
-        [
-          "dow jones transportation average",
-          "$ 100.00",
-          "$ 111.65",
-          "$ 122.61",
-          "$ 124.35",
-          "$ 97.72",
-          "$ 115.88"
-        ]
-      ]
-    },
-    "conversation": [
-      {
-        "question": "what was the fluctuation of the performance price of the ups from 2004 to 2006?",
-        "expected_program": "subtract(91.06, const_100)",
-        "expected_answer": -8.94,
-        "predicted_program": "subtract(91.06, 100.00)",
-        "predicted_answer": -8.94
-      },
-      {
-        "question": "and how much does this fluctuation represent in relation to that price in 2004?",
-        "expected_program": "subtract(91.06, const_100), divide(#0, const_100)",
-        "expected_answer": -0.0894,
-        "predicted_program": "subtract(91.06, 100), divide(#0, 100)",
-        "predicted_answer": -0.0894
-      },
-      {
-        "question": "and from this year to 2009, what was the fluctuation for that stock?",
-        "expected_program": "subtract(75.95, const_100)",
-        "expected_answer": -24.05,
-        "predicted_program": "subtract(75.95, 91.06)",
-        "predicted_answer": -15.11
-      },
-      {
-        "question": "what is this fluctuation as a percentage of the 2004 price?",
-        "expected_program": "subtract(75.95, const_100), divide(#0, const_100)",
-        "expected_answer": -0.2405,
-        "predicted_program": "subtract(75.95, const_100), divide(#0, const_100)",
-        "predicted_answer": -0.2405
-      },
-      {
-        "question": "and for the s&p 500 index price, what was the fluctuation in those five years?",
-        "expected_program": "subtract(75.95, const_100), divide(#0, const_100), subtract(102.11, const_100)",
-        "expected_answer": 2.11,
-        "predicted_program": "subtract(102.11, const_100)",
-        "predicted_answer": 2.11
-      },
-      {
-        "question": "and what percentage does this fluctuation represent in relation to the 2004 price of this stock?",
-        "expected_program": "subtract(75.95, const_100), divide(#0, const_100), subtract(102.11, const_100), divide(#2, const_100)",
-        "expected_answer": 0.0211,
-        "predicted_program": "subtract(102.11, const_100), divide(#0, const_100)",
-        "predicted_answer": 0.0211
-      },
-      {
-        "question": "what is, then, the difference between the ups percentage and this s&p 500 index one, for this five year period?",
-        "expected_program": "subtract(75.95, const_100), divide(#0, const_100), subtract(102.11, const_100), divide(#2, const_100), subtract(#1, #3)",
-        "expected_answer": -0.2616,
-        "predicted_program": "subtract(-0.2405, 0.0211)",
-        "predicted_answer": -0.2616
-      }
-    ],
-    "id": "Double_UPS/2009/page_33.pdf"
   }
 ]

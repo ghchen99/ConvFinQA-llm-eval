@@ -90,8 +90,43 @@ def clean_number(num_str: str) -> float:
         logger.warning(f"Failed to convert '{num_str}' to float: {e}")
         return 0.0
 
+def format_table_as_json_objects(table: List[List]) -> str:
+    """Convert table to JSON array of objects - most readable for AI."""
+    if not table or len(table) < 2:
+        return ""
+    
+    headers = table[0]
+    rows = table[1:]
+    
+    # Convert to array of objects
+    json_data = []
+    for row in rows:
+        row_obj = {}
+        for i, header in enumerate(headers):
+            value = row[i] if i < len(row) else ""
+            # Try to convert numbers
+            if isinstance(value, str) and value.strip():
+                clean_val = value.replace(',', '').replace('$', '').strip()
+                # Handle negative numbers in parentheses
+                if '(' in value and ')' in value:
+                    clean_val = clean_val.replace('(', '').replace(')', '')
+                    if clean_val.replace('.', '').replace('-', '').isdigit():
+                        try:
+                            value = -float(clean_val) if '.' in clean_val else -int(clean_val)
+                        except:
+                            pass
+                elif clean_val.replace('.', '').replace('-', '').isdigit():
+                    try:
+                        value = float(clean_val) if '.' in clean_val else int(clean_val)
+                    except:
+                        pass  # Keep as string if conversion fails
+            row_obj[header] = value
+        json_data.append(row_obj)
+    
+    return json.dumps(json_data, indent=2)
+
 def format_financial_context(financial_report: Dict[str, Any]) -> str:
-    """Format the financial report data into a readable context."""
+    """Format the financial report data into a readable context with JSON tables."""
     logger.debug("Formatting financial context")
     
     context = "FINANCIAL REPORT CONTEXT:\n\n"
@@ -104,22 +139,13 @@ def format_financial_context(financial_report: Dict[str, Any]) -> str:
             context += f"- {text}\n"
         context += "\n"
     
-    # Add table data
+    # Add table data as JSON
     if 'table' in financial_report and financial_report['table']:
         table = financial_report['table']
-        logger.debug(f"Adding table with {len(table)} rows")
-        context += "Financial Data Table:\n"
-        
-        # Header row
-        if len(table) > 0:
-            headers = table[0]
-            context += " | ".join(headers) + "\n"
-            context += "-" * 50 + "\n"
-        
-        # Data rows
-        for row in table[1:]:
-            context += " | ".join(str(cell) for cell in row) + "\n"
-        context += "\n"
+        logger.debug(f"Converting table with {len(table)} rows to JSON")
+        context += "Financial Data (JSON):\n"
+        json_table = format_table_as_json_objects(table)
+        context += json_table + "\n\n"
     
     # Add post-text
     if 'post_text' in financial_report:
