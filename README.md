@@ -217,7 +217,7 @@ The LLM judge demonstrates sophisticated understanding of format equivalence:
 - System correctly handles **format variations** (decimal vs percentage representation)
 - LLM judge recognizes **functional equivalence** in calculation approaches
 - Strong performance on **multi-turn conversations** requiring context retention
-- **~79% end-to-end accuracy** demonstrates robust financial reasoning capabilities
+- **~83% end-to-end accuracy** demonstrates robust financial reasoning capabilities
 
 ### System Capabilities
 
