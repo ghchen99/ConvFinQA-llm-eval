@@ -32,7 +32,8 @@ class AzureOpenAIClient:
         self,
         messages: List[Dict[str, str]],
         max_tokens: int = None,
-        temperature: float = None
+        temperature: float = None,
+        json: bool = False
     ) -> str:
         """Create a chat completion using Azure OpenAI.
         
@@ -40,6 +41,7 @@ class AzureOpenAIClient:
             messages: List of message dictionaries with 'role' and 'content'
             max_tokens: Maximum tokens for response (uses config default if None)
             temperature: Temperature for response (uses config default if None)
+            json: Whether to request JSON response format (default: False)
             
         Returns:
             Response content as string
@@ -50,12 +52,19 @@ class AzureOpenAIClient:
         try:
             logger.info("Sending request to Azure OpenAI")
             
-            response = self.client.chat.completions.create(
-                messages=messages,
-                max_tokens=max_tokens or config.max_tokens,
-                temperature=temperature or config.temperature,
-                model=config.azure_openai.deployment_name
-            )
+            # Prepare the base parameters
+            params = {
+                "messages": messages,
+                "max_tokens": max_tokens or config.max_tokens,
+                "temperature": temperature or config.temperature,
+                "model": config.azure_openai.deployment_name
+            }
+            
+            # Add response_format if json=True
+            if json:
+                params["response_format"] = {"type": "json_object"}
+            
+            response = self.client.chat.completions.create(**params)
             
             logger.info("Received response from Azure OpenAI")
             
