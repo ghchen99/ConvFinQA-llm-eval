@@ -1,6 +1,6 @@
 # Financial QA Predictor
 
-**Note**: This is the README file for the repository which gives a general overview and setup instructions. For the official project report, see the [Technical Report](./documentation/report.md)
+**Note**: This is the README file for the repository which gives a general overview and setup instructions. For the official project report, see the [technical report](./documentation/report.md).
 
 A sophisticated LLM-powered system for answering financial questions from semi-structured financial reports. The system processes financial data (text + tables) and generates both calculation programs and numerical answers for complex financial queries.
 
