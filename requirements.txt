@@ -4,3 +4,4 @@ autogen-ext[openai]>=0.4.0
 autogen-ext[web-surfer]>=0.4.0
 playwright
 asyncio
+pytest
