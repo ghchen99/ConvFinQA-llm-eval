@@ -340,6 +340,7 @@ src/
 ├── data/          # Data formatting and processing  
 ├── evaluation/    # LLM judge evaluation system
 ├── prediction/    # Core prediction generation
+├── tests/         # Unit testing files
 └── utils/         # Logging, validation, text processing
 ```
 
@@ -350,19 +351,6 @@ src/
 3. **Configurability**: Environment-based configuration management
 4. **Observability**: Detailed logging and progress tracking
 5. **Testability**: Modular design enables unit testing
-
-### Running Tests
-
-```bash
-# Future: Unit tests for core components
-python -m pytest tests/
-
-# Integration tests with mock Azure OpenAI
-python -m pytest tests/integration/
-
-# End-to-end tests with sample data
-python -m pytest tests/e2e/
-```
 
 ## 📈 Scaling Considerations
 
